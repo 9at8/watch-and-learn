@@ -1,0 +1,12 @@
+{
+  "name": "Watch and Learn",
+  "version": "1.0",
+  "description": "A chrome extension to make learn videos better using video.js",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["https://learn.uwaterloo.ca/*"],
+      "js": ["build/main.js"]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "watch-and-learn",
+  "version": "1.0.0",
+  "description": "A chrome extension to make learn videos better using video.js",
+  "main": "index.js",
+  "repository": "https://github.com/9at8/watch-and-learn",
+  "author": "Aditya Thakral <github@9at8.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/video.js": "^7.3.11",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch"
+  },
+  "dependencies": {
+    "video.js": "^7.10.2"
+  }
+}
