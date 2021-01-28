@@ -6,7 +6,8 @@
   "content_scripts": [
     {
       "matches": ["https://learn.uwaterloo.ca/*"],
-      "js": ["build/main.js"]
+      "js": ["build/main.js"],
+      "css": ["css/video-js.css"]
     }
   ]
 }
