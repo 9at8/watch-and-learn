@@ -1,0 +1,26 @@
+* Watch and Learn
+
+A chrome extension that replaces Learn's default player with [[https://videojs.com/][video.js]].
+
+** Why?
+
+A lot of times, streaming is preferred over downloading, but there are so many things wrong with the default player on learn. This extension replaces the default player with a [[https://videojs.com/][video.js]] player, which is much better.
+
+- Seeking using the mouse is not precise
+- No picture in picture
+- No keyboard shortcuts
+
+** Known Issues
+
+- Keyboard controls don't work
+- No option to view subtitles
+
+** Installation + Contributing
+
+- Clone this repo
+- ~yarn~
+- ~yarn run build~ if you're installing
+- ~yarn run build:watch~ if you're testing
+- Open [[chrome://extensions]]
+- Enable developer mode
+- Click on "Load unpacked", and pick this directory.
