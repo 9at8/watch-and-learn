@@ -2,6 +2,8 @@
 
 A chrome extension that replaces Learn's default player with [[https://videojs.com/][video.js]].
 
+[[file:/assets/demo.png]]
+
 ** Why?
 
 A lot of times, streaming is preferred over downloading, but there are so many things wrong with the default player on learn. This extension replaces the default player with a [[https://videojs.com/][video.js]] player, which is much better.
