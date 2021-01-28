@@ -17,12 +17,19 @@ A lot of times, streaming is preferred over downloading, but there are so many t
 - Keyboard controls don't work
 - No option to view subtitles
 
-** Installation + Contributing
+** Installation
 
-- Clone this repo
-- ~yarn~
-- ~yarn run build~ if you're installing
-- ~yarn run build:watch~ if you're testing
-- Open [[chrome://extensions]]
-- Enable developer mode
-- Click on "Load unpacked", and pick this directory.
+1. [[https://github.com/9at8/watch-and-learn/suites/1915924538/artifacts/37675800][Download zip]] (Artifact from GitHub actions) and unzip it
+1. Open [[chrome://extensions]]
+1. Enable developer mode
+1. Click on "Load unpacked", and pick this directory
+
+** Contributing
+
+1. Clone this repo
+1. ~yarn~
+1. ~yarn run build~ if you're installing
+1. ~yarn run build:watch~ if you're testing
+1. Open [[chrome://extensions]]
+1. Enable developer mode
+1. Click on "Load unpacked", and pick this directory
