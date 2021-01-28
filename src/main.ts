@@ -1,5 +1,7 @@
 import videojs from 'video.js'
 
+console.log(videojs)
+
 function exponentialWait(
   check: () => boolean,
   limit: number = 10000,
@@ -29,8 +31,20 @@ async function main() {
   await exponentialWait(() => getPlayer() != null, 10000, 50);
 
   const oldPlayer = getPlayer();
+  const container = getPlayer()?.parentElement;
 
-  console.log(oldPlayer);
+  const video = document.createElement("video");
+  video.autoplay = true;
+  // video.autoPictureInPicture = true;
+  video.controls = true
+  video.style.width = "100%";
+
+  const source = document.createElement("source");
+  video.append(source);
+
+  source.src = oldPlayer?.getAttribute("src") ?? "";
+
+  container?.append(video);
 }
 
 main();
