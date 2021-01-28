@@ -1,6 +1,4 @@
-import videojs from 'video.js'
-
-console.log(videojs)
+import videojs from "video.js";
 
 function exponentialWait(
   check: () => boolean,
@@ -34,17 +32,21 @@ async function main() {
   const container = getPlayer()?.parentElement;
 
   const video = document.createElement("video");
-  video.autoplay = true;
-  // video.autoPictureInPicture = true;
-  video.controls = true
+  video.classList.add("video-js");
+  video.controls = true;
   video.style.width = "100%";
 
   const source = document.createElement("source");
+  source.src = oldPlayer?.getAttribute("src") ?? "";
   video.append(source);
 
-  source.src = oldPlayer?.getAttribute("src") ?? "";
-
+  oldPlayer?.remove();
   container?.append(video);
+
+  videojs(video, {
+    src: oldPlayer?.getAttribute("src") ?? "",
+    playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3],
+  });
 }
 
 main();
