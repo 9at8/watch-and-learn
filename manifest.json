@@ -1,6 +1,9 @@
 {
   "name": "Watch and Learn",
   "version": "1.0",
+  "icons": {
+    "128": "static/icon128.png"
+  },
   "description": "A chrome extension to make learn videos better using video.js",
   "manifest_version": 2,
   "content_scripts": [
@@ -12,7 +15,7 @@
         "build/main.js"
       ],
       "css": [
-        "css/video-js.css"
+        "static/video-js.css"
       ]
     }
   ]
