@@ -5,9 +5,15 @@
   "manifest_version": 2,
   "content_scripts": [
     {
-      "matches": ["https://learn.uwaterloo.ca/*"],
-      "js": ["build/main.js"],
-      "css": ["css/video-js.css"]
+      "matches": [
+        "https://learn.uwaterloo.ca/*"
+      ],
+      "js": [
+        "build/main.js"
+      ],
+      "css": [
+        "css/video-js.css"
+      ]
     }
   ]
 }
