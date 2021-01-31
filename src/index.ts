@@ -33,18 +33,15 @@ async function main() {
 
   const video = document.createElement("video");
   video.classList.add("video-js");
-  video.controls = true;
   video.style.width = "100%";
-
-  const source = document.createElement("source");
-  source.src = oldPlayer?.getAttribute("src") ?? "";
-  video.append(source);
 
   oldPlayer?.remove();
   container?.append(video);
 
   videojs(video, {
-    src: oldPlayer?.getAttribute("src") ?? "",
+    controls: true,
+    sources:
+      oldPlayer == null ? [] : [{ src: oldPlayer.getAttribute("src") ?? "" }],
     playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3],
   });
 }
