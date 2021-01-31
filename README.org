@@ -1,6 +1,6 @@
 * Watch and Learn
 
-A chrome extension that replaces Learn's default player with [[https://videojs.com/][video.js]].
+A chrome extension that replaces Learn's default video and audio player with [[https://videojs.com/][video.js]].
 
 [[file:/assets/demo.png]]
 
@@ -18,7 +18,7 @@ A lot of times, streaming is preferred over downloading, but there are so many t
 
 ** Installation
 
-1. [[https://github.com/9at8/watch-and-learn/suites/1915924538/artifacts/37675800][Download zip]] (Artifact from GitHub actions) and unzip it
+1. Download the zip from the latest release and unzip it
 1. Open [[chrome://extensions]]
 1. Enable developer mode
 1. Click on "Load unpacked", and pick this directory

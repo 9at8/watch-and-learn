@@ -4,7 +4,7 @@
   "icons": {
     "128": "static/icon128.png"
   },
-  "description": "A chrome extension to make learn videos better using video.js",
+  "description": "A chrome extension that replaces Learn's default video and audio player with video.js",
   "manifest_version": 2,
   "content_scripts": [
     {
