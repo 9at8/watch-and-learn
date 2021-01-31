@@ -14,7 +14,6 @@ A lot of times, streaming is preferred over downloading, but there are so many t
 
 ** Known Issues
 
-- Keyboard controls don't work
 - No option to view subtitles
 
 ** Installation
