@@ -1,8 +1,18 @@
 * Watch and Learn
 
+[[file:/static/icon128.png]]
+
 A chrome extension that replaces Learn's default video and audio player with [[https://videojs.com/][video.js]].
 
-[[file:/assets/demo.png]]
+** Screenshots
+
+*** 3x playback rate
+
+[[file:/assets/playback-rate.png]]
+
+*** Picture in picture
+
+[[file:/assets/pip.png]]
 
 ** Why?
 
