@@ -30,7 +30,7 @@ async function main() {
   await exponentialWait(() => getPlayer() != null, 10000, 50);
 
   const oldPlayer = getPlayer();
-  const container = getPlayer()?.parentElement;
+  const container = oldPlayer?.parentElement;
 
   const video = document.createElement("video");
   video.classList.add("video-js");
