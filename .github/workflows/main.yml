@@ -37,7 +37,7 @@ jobs:
       - run: yarn run build:prod
 
       # Upload artifact
-      - run: mkdir pkg && cp manifest.json pkg && cp -r build pkg && cp -r static pkg
+      - run: mkdir pkg && cp manifest.json pkg && cp -r build:prod pkg && cp -r static pkg
       - uses: actions/upload-artifact@v2
         with:
           name: watch-and-learn
