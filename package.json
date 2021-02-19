@@ -7,9 +7,9 @@
   "author": "Aditya Thakral <github@9at8.dev>",
   "license": "MIT",
   "devDependencies": {
-    "@types/video.js": "^7.3.14",
-    "@types/videojs-hotkeys": "^0.2.0",
-    "typescript": "^4.1.3"
+    "@types/video.js": "7.3.14",
+    "@types/videojs-hotkeys": "0.2.0",
+    "typescript": "4.1.3"
   },
   "scripts": {
     "build": "tsc",
