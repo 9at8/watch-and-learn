@@ -12,10 +12,12 @@
         "https://learn.uwaterloo.ca/*"
       ],
       "js": [
-        "build/main.js"
+        "lib/video.js",
+        "lib/videojs.hotkeys.js",
+        "build/index.js"
       ],
       "css": [
-        "static/video-js.css"
+        "lib/video-js.css"
       ]
     }
   ]

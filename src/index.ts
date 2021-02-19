@@ -1,10 +1,7 @@
-import videojs from "video.js";
-import "videojs-hotkeys";
-
 function exponentialWait(
   check: () => boolean,
   limit: number = 10000,
-  initialTimeout = 100
+  initialTimeout = 50
 ) {
   return new Promise<void>((resolve, reject) => {
     function wait(timeout: number) {
@@ -12,7 +9,9 @@ function exponentialWait(
         if (check()) {
           resolve();
         } else if (timeout > limit) {
-          reject(`Timelimit "${limit}" exceeded`);
+          reject(
+            `[watch-and-learn] Could not find video player in timelimit "${limit}"ms.`
+          );
         } else {
           wait(timeout * 2);
         }
@@ -27,7 +26,8 @@ const DEFAULT_PLAYER_SELECTOR = "d2l-labs-media-player";
 
 async function main() {
   const getPlayer = () => document.querySelector(DEFAULT_PLAYER_SELECTOR);
-  await exponentialWait(() => getPlayer() != null, 10000, 50);
+
+  await exponentialWait(() => getPlayer() != null);
 
   const oldPlayer = getPlayer();
   const container = oldPlayer?.parentElement;
