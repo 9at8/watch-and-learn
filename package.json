@@ -16,6 +16,6 @@
     "build:watch": "tsc --watch",
     "clean": "rm -r ./build ./pkg",
     "assemble": "rm -r ./pkg; mkdir ./pkg && cp manifest.json pkg && cp -r build pkg && cp -r static pkg && cp -r lib pkg && cp -r src pkg",
-    "zip": "yarn run assemble && pushd ./pkg; zip ../watch-and-learn.zip $(ls -a); popd"
+    "zip": "yarn run assemble && pushd ./pkg; zip -r ../watch-and-learn.zip $(ls); popd"
   }
 }
