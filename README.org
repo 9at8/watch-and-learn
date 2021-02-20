@@ -24,7 +24,7 @@ A chrome extension that replaces Learn's default video and audio player with [[h
 
 The default video and audio player on Learn does not work well enough. It's missing a lot of keyboard shortcuts, seeking tracks is not precise and does not support picture in picture, which most browsers support.
 
-This extension replaces the default player with a [video.js](https://videojs.com) player.
+This extension replaces the default player with a [[https://videojs.com][video.js]] player.
 
 Video.js is an extensible video player for browsers, has a lot of plugins, and is used by a lot of companies in production. Watch and Learn leverages it to offer the following features:
 
