@@ -28,7 +28,7 @@ Video.js is an extensible video player for browsers, has a lot of plugins, and i
 
 ** Known Issues
 
-- No option to view subtitles
+See issues - [[https://github.com/9at8/watch-and-learn/issues]]
 
 ** Installation
 
