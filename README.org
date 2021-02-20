@@ -14,6 +14,11 @@ A chrome extension that replaces Learn's default video and audio player with [[h
 
 [[file:/assets/pip.png]]
 
+** Reviews
+
+- "/Makes dealing with the reality of video lectures a bit more manageable/"
+- and (potentially) many more ... (open an issue to you can add yours here!)
+
 ** Why?
 
 The default video and audio player on Learn does not work well enough. It's missing a lot of keyboard shortcuts, seeking tracks is not precise and does not support picture in picture, which most browsers support.
