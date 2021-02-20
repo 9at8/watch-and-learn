@@ -17,7 +17,7 @@ A chrome extension that replaces Learn's default video and audio player with [[h
 ** Reviews
 
 - "/Makes dealing with the reality of video lectures a bit more manageable/"
-- and (potentially) many more ... (open an issue to you can add yours here!)
+- and (potentially) many more ... (open an issue to add yours here!)
 
 ** Why?
 
