@@ -4,6 +4,8 @@
 
 A chrome extension that replaces Learn's default video and audio player with [[https://videojs.com/][video.js]].
 
+[[https://chrome.google.com/webstore/detail/watch-and-learn/flkieefnhcdppcpgpokibmokkochikei][Install from the chrome store]]
+
 ** Screenshots
 
 *** 3x playback rate
@@ -36,7 +38,11 @@ Video.js is an extensible video player for browsers, has a lot of plugins, and i
 
 See issues - [[https://github.com/9at8/watch-and-learn/issues]]
 
-** Installation
+** Installation (*recommended*)
+
+1. Install from the [[https://chrome.google.com/webstore/detail/watch-and-learn/flkieefnhcdppcpgpokibmokkochikei][chrome store]]
+
+** Installation (from zip)
 
 1. Download the zip from the latest release and unzip it
 1. Open [[chrome://extensions]]
