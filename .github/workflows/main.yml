@@ -34,7 +34,7 @@ jobs:
       - run: yarn --frozen-lockfile
 
       # Build
-      - run: yarn run build
+      - run: yarn run build:prod
 
       # Upload artifact
       - run: yarn run assemble
