@@ -14,7 +14,7 @@
       "js": [
         "lib/video.js",
         "lib/videojs.hotkeys.js",
-        "build/index.js"
+        "build/content-script.js"
       ],
       "css": [
         "lib/video-js.css"
