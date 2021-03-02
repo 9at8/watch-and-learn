@@ -85,10 +85,15 @@
   dependencies:
     source-map "^0.6.1"
 
-"@types/video.js@*", "@types/video.js@7.3.14":
+"@types/video.js@*":
   version "7.3.14"
   resolved "https://registry.yarnpkg.com/@types/video.js/-/video.js-7.3.14.tgz#ad47f4021afb1d2ea1f32389da06ddb4f4e788f8"
   integrity sha512-8bYfJa1J5+IwAtfB7QiveRrqW7DnZ2yMEDOSkx9MguBP1rluW06S2A13BIrcUKfQSp9iyuGWk8jnsOM+XBfYZg==
+
+"@types/video.js@7.3.15":
+  version "7.3.15"
+  resolved "https://registry.yarnpkg.com/@types/video.js/-/video.js-7.3.15.tgz#42ff1bf598384ae5966bf6f64560197357e99033"
+  integrity sha512-BrwSex/PFQENARdxWJVlYUwqu0HbUhM7Zrk8DnrWhUO4Q1BoNK93KNu4OlZOTOlVVS99nX5BiOhB8AGpI6jcQA==
 
 "@types/videojs-hotkeys@0.2.0":
   version "0.2.0"
