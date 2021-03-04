@@ -1,3 +1,5 @@
+import { getSettings } from "./settings";
+
 function exponentialWait(
   check: () => boolean,
   limit: number = 10000,
@@ -27,7 +29,10 @@ const DEFAULT_PLAYER_SELECTOR = "d2l-labs-media-player";
 async function main() {
   const getPlayer = () => document.querySelector(DEFAULT_PLAYER_SELECTOR);
 
-  await exponentialWait(() => getPlayer() != null);
+  const [settings, _] = await Promise.all([
+    getSettings(),
+    exponentialWait(() => getPlayer() != null),
+  ]);
 
   const oldPlayer = getPlayer();
   const container = oldPlayer?.parentElement;
@@ -46,6 +51,8 @@ async function main() {
     playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3],
   }).ready(function () {
     this.hotkeys();
+
+    video.playbackRate = settings["playback.rate"];
   });
 }
 
