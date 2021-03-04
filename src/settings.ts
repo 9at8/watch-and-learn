@@ -1,42 +1,37 @@
-export interface BoolSetting {
-  type: "bool";
-  id: string;
-  value: boolean;
+export interface Settings {
+  "playback.rate": number;
 }
 
-export interface NumberSetting {
-  type: "number";
-  id: string;
-  value: number;
-}
+export const DEFAULT_SETTINGS: Settings = {
+  "playback.rate": 1,
+};
 
-export type Setting = BoolSetting | NumberSetting;
+export async function getSettings(): Promise<Settings> {
+  let storedSettings = await getSettingsFromStorage();
 
-export const DEFAULT_SETTINGS: Setting[] = [
-  { type: "number", id: "playback.speed", value: 1 },
-];
-
-const SETTINGS_KEY = "settings";
-
-export async function getSettings(): Promise<Setting[]> {
-  let storedSettings = await new Promise<Setting[] | undefined>((resolve) => {
-    chrome.storage.local.get(SETTINGS_KEY, (items) => resolve(items.settings));
-  });
-
-  if (storedSettings == null || storedSettings.length === 0) {
-    await new Promise<void>((resolve) => {
-      chrome.storage.local.set({ [SETTINGS_KEY]: DEFAULT_SETTINGS }, resolve);
-    });
-
+  if (storedSettings == null) {
+    await saveSettings(DEFAULT_SETTINGS);
     storedSettings = DEFAULT_SETTINGS;
   }
+
+  console.log("stored", storedSettings);
+  console.log("default", DEFAULT_SETTINGS);
 
   return storedSettings;
 }
 
-export function settingNameFromId(id: string): string {
-  return id
-    .split(".")
-    .map((word) => `${word[0].toUpperCase()}${word.slice(1)}`)
-    .join(" ");
+export function saveSettings(settings: Settings): Promise<void> {
+  return new Promise<void>((resolve) => {
+    chrome.storage.local.set({ [CHROME_SETTINGS_KEY]: settings }, resolve);
+  });
+}
+
+const CHROME_SETTINGS_KEY = "settings";
+
+function getSettingsFromStorage(): Promise<Settings | undefined> {
+  return new Promise((resolve) => {
+    chrome.storage.local.get(CHROME_SETTINGS_KEY, (items) =>
+      resolve(items.settings)
+    );
+  });
 }
