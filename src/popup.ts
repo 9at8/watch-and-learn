@@ -77,7 +77,7 @@ function renderSettings(
   return [
     $(
       "div",
-      {},
+      { class: "control-container" },
       models.map((model) => model.render())
     ),
     models,

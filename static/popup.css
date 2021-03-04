@@ -1,3 +1,7 @@
 html {
   min-width: 300px;
 }
+
+.control-container {
+  margin-bottom: 20px;
+}
