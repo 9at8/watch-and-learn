@@ -6,11 +6,17 @@ A chrome extension that replaces Learn's default video and audio player with [[h
 
 [[https://chrome.google.com/webstore/detail/watch-and-learn/flkieefnhcdppcpgpokibmokkochikei][Install from the chrome store]]
 
-** Screenshots
+** Features and Screenshots
 
 *** 3x playback rate
 
 [[file:/assets/playback-rate.png]]
+
+*** Default playback rate for all lectures
+
+All videos will run at this rate without you needing to do anything. The default is 1x. You can also increment it in 0.05 step intervals.
+
+[[file:/assets/default-playback-rate.jpg]]
 
 *** Picture in picture
 
