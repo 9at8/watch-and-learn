@@ -14,9 +14,6 @@ export async function getSettings(): Promise<Settings> {
     storedSettings = DEFAULT_SETTINGS;
   }
 
-  console.log("stored", storedSettings);
-  console.log("default", DEFAULT_SETTINGS);
-
   return storedSettings;
 }
 

@@ -74,8 +74,6 @@ async function main() {
   const form = $find<HTMLFormElement>("#settings-form")!;
   const container = $find("#settings-container")!;
 
-  console.log("form", form);
-
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
