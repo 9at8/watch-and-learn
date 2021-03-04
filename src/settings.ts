@@ -32,3 +32,21 @@ function getSettingsFromStorage(): Promise<Settings | undefined> {
     );
   });
 }
+
+export interface SettingsUpdateMessage {
+  settingsUpdate: Settings;
+}
+
+export function listenForSettingsUpdate(
+  handleUpdate: (newSettings: Settings) => void
+) {
+  chrome.storage.onChanged.addListener((changes, area) => {
+    if (area !== "local") {
+      return;
+    }
+
+    if (changes.settings != null) {
+      handleUpdate(changes.settings.newValue);
+    }
+  });
+}

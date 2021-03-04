@@ -1,10 +1,13 @@
 import {
   DEFAULT_SETTINGS,
   getSettings,
+  listenForSettingsUpdate,
   saveSettings,
   Settings,
 } from "./settings";
 import { $, $find } from "./utils";
+
+type GenericSettingModel = SettingModel<Settings[keyof Settings]>;
 
 abstract class SettingModel<T> {
   constructor(public id: keyof Settings, public value: T) {}
@@ -45,9 +48,7 @@ class NumberSettingModel extends SettingModel<number> {
   }
 }
 
-function createModelsFromSettings(
-  settings: Settings
-): SettingModel<Settings[keyof Settings]>[] {
+function createModelsFromSettings(settings: Settings): GenericSettingModel[] {
   return Object.entries(settings).map(([id, value]) => {
     switch (typeof value) {
       case "number":
@@ -58,9 +59,7 @@ function createModelsFromSettings(
   });
 }
 
-function createSettingsFromModels(
-  models: SettingModel<Settings[keyof Settings]>[]
-): Settings {
+function createSettingsFromModels(models: GenericSettingModel[]): Settings {
   return models.reduce(
     (settingsSoFar, model) => ({
       ...settingsSoFar,
@@ -70,9 +69,23 @@ function createSettingsFromModels(
   ) as Settings;
 }
 
+function renderSettings(
+  settings: Settings
+): [HTMLElement, GenericSettingModel[]] {
+  const models = createModelsFromSettings(settings);
+
+  return [
+    $(
+      "div",
+      {},
+      models.map((model) => model.render())
+    ),
+    models,
+  ];
+}
+
 async function main() {
   const form = $find<HTMLFormElement>("#settings-form")!;
-  const container = $find("#settings-container")!;
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -80,15 +93,20 @@ async function main() {
     saveSettings(createSettingsFromModels(models));
   });
 
-  form.addEventListener("reset", async (event) => {
+  form.addEventListener("reset", (event) => {
     event.preventDefault();
 
-    await saveSettings(DEFAULT_SETTINGS);
-    models = createModelsFromSettings(DEFAULT_SETTINGS);
+    saveSettings(DEFAULT_SETTINGS);
   });
 
-  let models = createModelsFromSettings(await getSettings());
-  container.append(...models.flatMap((model) => model.render()));
+  listenForSettingsUpdate((newSettings) => {
+    container.remove();
+    [container, models] = renderSettings(newSettings);
+    form.prepend(container);
+  });
+
+  let [container, models] = renderSettings(await getSettings());
+  form.prepend(container);
 }
 
 main();
