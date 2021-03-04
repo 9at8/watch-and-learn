@@ -1,4 +1,4 @@
-import { getSettings } from "./settings";
+import { getSettings, Settings } from "./settings";
 
 function exponentialWait(
   check: () => boolean,
@@ -12,7 +12,7 @@ function exponentialWait(
           resolve();
         } else if (timeout > limit) {
           reject(
-            `[watch-and-learn] Could not find video player in timelimit "${limit}"ms.`
+            `[watch-and-learn] Could not find video player in timelimit ${limit} ms.`
           );
         } else {
           wait(timeout * 2);
@@ -22,6 +22,10 @@ function exponentialWait(
 
     wait(initialTimeout);
   });
+}
+
+function applySettings(video: HTMLVideoElement, settings: Settings): void {
+  video.playbackRate = settings["playback.rate"];
 }
 
 const DEFAULT_PLAYER_SELECTOR = "d2l-labs-media-player";
@@ -52,7 +56,7 @@ async function main() {
   }).ready(function () {
     this.hotkeys();
 
-    video.playbackRate = settings["playback.rate"];
+    applySettings(video, settings);
   });
 }
 
