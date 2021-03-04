@@ -1,4 +1,5 @@
 {
   "editor.formatOnSave": true,
-  "html.format.enable": true
+  "html.format.enable": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
