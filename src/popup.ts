@@ -44,19 +44,44 @@ class NumberSettingModel extends SettingModel<number> {
       throw new Error("Setting is not rendered");
     }
 
-    return +this.control.value;
+    return Number(this.control.value);
+  }
+}
+
+class BooleanSettingModel extends SettingModel<boolean> {
+  private control: HTMLInputElement | undefined;
+
+  render(): HTMLElement {
+    const nameSpan = $("span");
+    nameSpan.textContent = `${this.name}: `;
+    this.control = $("input", { type: "checkbox" });
+    this.control.checked = this.value;
+
+    return $("div", {}, [$("label", {}, [nameSpan, this.control])]);
+  }
+
+  getLatestValue(): boolean {
+    if (this.control == null) {
+      throw new Error("Setting is not rendered");
+    }
+
+    return this.control.checked;
   }
 }
 
 function createModelsFromSettings(settings: Settings): GenericSettingModel[] {
-  return Object.entries(settings).map(([id, value]) => {
-    switch (typeof value) {
-      case "number":
-        return new NumberSettingModel(id as keyof Settings, value);
-      default:
-        throw Error("Not implemented yet");
-    }
-  });
+  return Object.entries(settings)
+    .sort(([id1, _1], [id2, _2]) => (id1 < id2 ? -1 : 1))
+    .map(([id, value]) => {
+      switch (typeof value) {
+        case "number":
+          return new NumberSettingModel(id as keyof Settings, value);
+        case "boolean":
+          return new BooleanSettingModel(id as keyof Settings, value);
+        default:
+          throw Error("Not implemented yet");
+      }
+    });
 }
 
 function createSettingsFromModels(models: GenericSettingModel[]): Settings {

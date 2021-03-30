@@ -1,8 +1,10 @@
 export interface Settings {
+  "disclaimer.accepted": boolean;
   "playback.rate": number;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
+  "disclaimer.accepted": false,
   "playback.rate": 1,
 };
 
@@ -11,10 +13,9 @@ export async function getSettings(): Promise<Settings> {
 
   if (storedSettings == null) {
     await saveSettings(DEFAULT_SETTINGS);
-    storedSettings = DEFAULT_SETTINGS;
   }
 
-  return storedSettings;
+  return { ...DEFAULT_SETTINGS, ...storedSettings };
 }
 
 export function saveSettings(settings: Settings): Promise<void> {
