@@ -1,4 +1,4 @@
-import { getSettings, Settings } from "./settings";
+import { getSettings, saveSettings, Settings } from "./settings";
 
 function exponentialWait(
   check: () => boolean,
@@ -37,6 +37,20 @@ async function main() {
     getSettings(),
     exponentialWait(() => getPlayer() != null),
   ]);
+
+  if (!settings["disclaimer.accepted"]) {
+    if (
+      confirm(`Disclaimer:
+- "Watch and Learn" is not affiliated with UWaterloo, Learn, or its developers.
+- Use "Watch and Learn" at your own responsibility.
+
+Click "Ok" to accept this disclaimer.`)
+    ) {
+      await saveSettings({ ...settings, "disclaimer.accepted": true });
+    } else {
+      return;
+    }
+  }
 
   const oldPlayer = getPlayer();
   const container = oldPlayer?.parentElement;
