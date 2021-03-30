@@ -38,6 +38,10 @@ async function main() {
     exponentialWait(() => getPlayer() != null),
   ]);
 
+  if (!settings["enable.extension"]) {
+    return;
+  }
+
   if (!settings["disclaimer.accepted"]) {
     if (
       confirm(`Disclaimer:

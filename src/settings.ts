@@ -1,10 +1,12 @@
 export interface Settings {
   "disclaimer.accepted": boolean;
+  "enable.extension": boolean;
   "playback.rate": number;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
   "disclaimer.accepted": false,
+  "enable.extension": true,
   "playback.rate": 1,
 };
 
