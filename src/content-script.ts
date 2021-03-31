@@ -28,6 +28,12 @@ function applySettings(video: HTMLVideoElement, settings: Settings): void {
   video.playbackRate = settings["playback.rate"];
 }
 
+const DISCLAIMER_TEXT = `Disclaimer:
+- "Watch and Learn" is not affiliated with UWaterloo, Learn, or its developers.
+- Use "Watch and Learn" at your own responsibility.
+
+Click "Ok" to accept this disclaimer.`;
+
 const DEFAULT_PLAYER_SELECTOR = "d2l-labs-media-player";
 
 async function main() {
@@ -43,13 +49,7 @@ async function main() {
   }
 
   if (!settings["disclaimer.accepted"]) {
-    if (
-      confirm(`Disclaimer:
-- "Watch and Learn" is not affiliated with UWaterloo, Learn, or its developers.
-- Use "Watch and Learn" at your own responsibility.
-
-Click "Ok" to accept this disclaimer.`)
-    ) {
+    if (confirm(DISCLAIMER_TEXT)) {
       await saveSettings({ ...settings, "disclaimer.accepted": true });
     } else {
       return;
