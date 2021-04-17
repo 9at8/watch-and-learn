@@ -8,6 +8,12 @@ A chrome extension that replaces Learn's default video and audio player with [[h
 
 ** Features and Screenshots
 
+*** Binge mode
+
+Now you can "Learn and Chill"!
+
+[[file:/assets/binge-mode.gif]]
+
 *** 3x playback rate
 
 [[file:/assets/playback-rate.png]]
