@@ -1,17 +1,25 @@
+import { get, set } from "./storage";
+
 export interface Settings {
+  "binge.mode.enabled": boolean;
+  "binge.next.wait.time": number;
   "disclaimer.accepted": boolean;
   "enable.extension": boolean;
   "playback.rate": number;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
+  "binge.mode.enabled": true,
+  "binge.next.wait.time": 5,
   "disclaimer.accepted": false,
   "enable.extension": true,
   "playback.rate": 1,
 };
 
+const CHROME_SETTINGS_KEY = "settings";
+
 export async function getSettings(): Promise<Settings> {
-  let storedSettings = await getSettingsFromStorage();
+  let storedSettings = await get<Settings>(CHROME_SETTINGS_KEY);
 
   if (storedSettings == null) {
     await saveSettings(DEFAULT_SETTINGS);
@@ -20,28 +28,11 @@ export async function getSettings(): Promise<Settings> {
   return { ...DEFAULT_SETTINGS, ...storedSettings };
 }
 
-export function saveSettings(settings: Settings): Promise<void> {
-  return new Promise<void>((resolve) => {
-    chrome.storage.local.set({ [CHROME_SETTINGS_KEY]: settings }, resolve);
-  });
-}
-
-const CHROME_SETTINGS_KEY = "settings";
-
-function getSettingsFromStorage(): Promise<Settings | undefined> {
-  return new Promise((resolve) => {
-    chrome.storage.local.get(CHROME_SETTINGS_KEY, (items) =>
-      resolve(items.settings)
-    );
-  });
-}
-
-export interface SettingsUpdateMessage {
-  settingsUpdate: Settings;
-}
+export const saveSettings = (settings: Settings) =>
+  set(CHROME_SETTINGS_KEY, settings);
 
 export function listenForSettingsUpdate(
-  handleUpdate: (newSettings: Settings) => void
+  handleUpdate: (newSettings: Settings) => void,
 ) {
   chrome.storage.onChanged.addListener((changes, area) => {
     if (area !== "local") {

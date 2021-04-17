@@ -34,6 +34,9 @@ class NumberSettingModel extends SettingModel<number> {
     if (this.id === "playback.rate") {
       this.control.step = "0.05";
       this.control.min = "0";
+    } else {
+      this.control.step = "1";
+      this.control.min = "0";
     }
 
     return $("div", {}, [$("label", {}, [nameSpan, this.control])]);
@@ -90,12 +93,12 @@ function createSettingsFromModels(models: GenericSettingModel[]): Settings {
       ...settingsSoFar,
       [model.id]: model.getLatestValue(),
     }),
-    {}
+    {},
   ) as Settings;
 }
 
 function renderSettings(
-  settings: Settings
+  settings: Settings,
 ): [HTMLElement, GenericSettingModel[]] {
   const models = createModelsFromSettings(settings);
 
@@ -103,7 +106,7 @@ function renderSettings(
     $(
       "div",
       { class: "control-container" },
-      models.map((model) => model.render())
+      models.map((model) => model.render()),
     ),
     models,
   ];

@@ -5,7 +5,7 @@ export interface ElementAttributes {
 export function $<Name extends keyof HTMLElementTagNameMap>(
   name: Name,
   attrs: ElementAttributes = {},
-  children: HTMLElement[] = []
+  children: HTMLElement[] = [],
 ): HTMLElementTagNameMap[Name] {
   const control = document.createElement(name);
 
@@ -25,4 +25,28 @@ export function $append<
 
 export function $find<T extends HTMLElement>(selector: string): T | null {
   return document.querySelector(selector) as T | null;
+}
+
+export function exponentialWait(
+  check: () => boolean,
+  limit: number = 10000,
+  initialTimeout = 50,
+) {
+  return new Promise<void>((resolve, reject) => {
+    function wait(timeout: number) {
+      setTimeout(() => {
+        if (check()) {
+          resolve();
+        } else if (timeout > limit) {
+          reject(
+            `[watch-and-learn] Could not find video player in timelimit ${limit} ms.`,
+          );
+        } else {
+          wait(timeout * 2);
+        }
+      }, timeout);
+    }
+
+    wait(initialTimeout);
+  });
 }
