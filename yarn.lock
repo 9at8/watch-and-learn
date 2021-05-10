@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.2.tgz#8f03a22a04de437254e8ce8cc84ba39689288752"
   integrity sha512-HyYEUDeIj5rRQU2Hk5HTB2uHsbRQpF70nvMhVzi+VJR0X+xNEhjPui4/kBf3VeH/wqD28PT4sVOm8qqLjBrSZg==
 
-"@types/chrome@0.0.135":
-  version "0.0.135"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.135.tgz#a4dc6dbdc68b3f7d04b24f04d0ca5c803392b72f"
-  integrity sha512-SczB5P5mIgQWHAeiimlYg5VFvuQKCw4Q5cAzVD7II1Czf4U0222jb3mTHUd1qM0BRJ/kPtzybBde+Zy2sdx/LA==
+"@types/chrome@0.0.138":
+  version "0.0.138"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.138.tgz#a5c17f8dd365504bc5375988f004889834fbe011"
+  integrity sha512-ZA9P/Asjzu3nLFGj5qrTaBewm0IvrcAWiFAurSZn1HKCi/7Nmz5wWreVOgtyof5U/CUPDABlvUM8v4kVoO9x/w==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
