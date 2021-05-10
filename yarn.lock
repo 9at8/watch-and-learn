@@ -73,10 +73,15 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.44.tgz#df7503e6002847b834371c004b372529f3f85215"
   integrity sha512-+gaugz6Oce6ZInfI/tK4Pq5wIIkJMEJUu92RB3Eu93mtj4wjjjz9EB5mLp5s1pSsLXdC/CPut/xF20ZzAQJbTA==
 
-"@types/video.js@*", "@types/video.js@7.3.14":
+"@types/video.js@*":
   version "7.3.14"
   resolved "https://registry.yarnpkg.com/@types/video.js/-/video.js-7.3.14.tgz#ad47f4021afb1d2ea1f32389da06ddb4f4e788f8"
   integrity sha512-8bYfJa1J5+IwAtfB7QiveRrqW7DnZ2yMEDOSkx9MguBP1rluW06S2A13BIrcUKfQSp9iyuGWk8jnsOM+XBfYZg==
+
+"@types/video.js@7.3.17":
+  version "7.3.17"
+  resolved "https://registry.yarnpkg.com/@types/video.js/-/video.js-7.3.17.tgz#df6b862005c2b5acd0a7c972040599d2d703698d"
+  integrity sha512-Wj3mdaZtcUYqNjorqQ9pVrZSCGUkQrDl1dm3h+tMPB/WGnA9B5dWF7zycV13+diNX0CWvxawjyBvQ+DmkeqNsw==
 
 "@types/videojs-hotkeys@0.2.0":
   version "0.2.0"
