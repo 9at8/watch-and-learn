@@ -1,7 +1,69 @@
 html {
-  min-width: 300px;
+  min-width: calc(400rem / 16);
+
+  --primary: #3f51b5;
+  --primary-lighter: #c5cae9;
+  --primary-lightest: #e8eaf6;
+  --primary-text: #ffffff;
+
+  --secondary-dark: #00675b;
+  --secondary: #009688;
+  --secondary-lighter: #b2dfdb;
+  --secondary-lightest: #e0f2f1;
+  --secondary-text: #fff;
+
+  --button-click-shadow: #000000;
+
+  --text: #000000;
+
+  color: var(--text);
 }
 
 .control-container {
-  margin-bottom: 20px;
+  margin-bottom: calc(20rem / 16);
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  padding: calc(10rem / 16);
+  border-radius: calc(4rem / 16);
+}
+
+.control input[type="number"] {
+  width: calc(100rem / 16);
+  text-align: right;
+}
+
+.control:nth-child(odd) {
+  background-color: var(--primary-lightest);
+}
+
+button {
+  box-sizing: border-box;
+  border: none;
+  padding: calc(10rem / 16);
+  border-radius: calc(4rem / 16);
+  background: var(--secondary-lightest);
+  transition: 0.2s;
+}
+
+button:hover {
+  background: var(--secondary-lighter);
+}
+
+button:active {
+  box-shadow: inset 0 0 calc(5rem / 16) var(--button-click-shadow);
+}
+
+button[type="submit"] {
+  background: var(--secondary);
+  color: var(--secondary-text);
+}
+
+button[type="submit"]:hover {
+  background: var(--secondary-dark);
 }

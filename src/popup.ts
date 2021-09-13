@@ -39,7 +39,7 @@ class NumberSettingModel extends SettingModel<number> {
       this.control.min = "0";
     }
 
-    return $("div", {}, [$("label", {}, [nameSpan, this.control])]);
+    return $("label", { class: "control" }, [nameSpan, this.control]);
   }
 
   getLatestValue(): number {
@@ -60,7 +60,7 @@ class BooleanSettingModel extends SettingModel<boolean> {
     this.control = $("input", { type: "checkbox" });
     this.control.checked = this.value;
 
-    return $("div", {}, [$("label", {}, [nameSpan, this.control])]);
+    return $("label", { class: "control" }, [nameSpan, this.control]);
   }
 
   getLatestValue(): boolean {
