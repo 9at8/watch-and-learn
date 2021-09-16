@@ -45,7 +45,7 @@ async function main() {
   const oldPlayer = getPlayer();
   const container = oldPlayer?.parentElement;
 
-  const video = $("video", { class: "video-js", style: "width: 100%" });
+  const video = $("video", { class: "video-js" });
 
   oldPlayer?.remove();
   container?.append(video);
@@ -55,6 +55,7 @@ async function main() {
     sources:
       oldPlayer == null ? [] : [{ src: oldPlayer.getAttribute("src") ?? "" }],
     playbackRates: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3],
+    fluid: true,
   }).ready(function () {
     this.hotkeys();
 
