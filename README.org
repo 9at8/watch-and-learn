@@ -2,7 +2,7 @@
 
 [[file:/static/icon128.png]]
 
-A chrome extension that replaces Learn's default video and audio player with [[https://videojs.com/][video.js]].
+A browser extension that replaces Learn's default video and audio player with [[https://videojs.com/][video.js]].
 
 [[https://chrome.google.com/webstore/detail/watch-and-learn/flkieefnhcdppcpgpokibmokkochikei][Install from the chrome store]]
 
