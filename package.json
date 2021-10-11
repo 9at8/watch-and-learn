@@ -13,7 +13,7 @@
     "@types/videojs-hotkeys": "0.2.0",
     "@types/webpack": "5.28.0",
     "ts-loader": "9.2.6",
-    "ts-node": "10.2.1",
+    "ts-node": "10.3.0",
     "typescript": "4.4.3",
     "webpack": "5.53.0",
     "webpack-cli": "4.8.0"
