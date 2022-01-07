@@ -9,7 +9,7 @@
   "devDependencies": {
     "@types/chrome": "0.0.159",
     "@types/node": "14.17.27",
-    "@types/video.js": "7.3.14",
+    "@types/video.js": "7.3.29",
     "@types/videojs-hotkeys": "0.2.0",
     "@types/webpack": "5.28.0",
     "ts-loader": "9.2.6",
