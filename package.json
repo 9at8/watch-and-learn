@@ -7,7 +7,7 @@
   "author": "Aditya Thakral <github@9at8.dev>",
   "license": "MIT",
   "devDependencies": {
-    "@types/chrome": "0.0.159",
+    "@types/chrome": "0.0.174",
     "@types/node": "16.11.13",
     "@types/video.js": "7.3.14",
     "@types/videojs-hotkeys": "0.2.0",
