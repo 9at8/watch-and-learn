@@ -110,17 +110,17 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.19.tgz#1afa165146997b8286b6eabcb1c2d50729055169"
   integrity sha512-BPAcfDPoHlRQNKktbsbnpACGdypPFBuX4xQlsWDE7B8XXcfII+SpOLay3/qZmCLb39kV5S1RTYwXdkx2lwLYng==
 
-"@types/video.js@*", "@types/video.js@7.3.14":
+"@types/video.js@7.3.14":
   version "7.3.14"
   resolved "https://registry.yarnpkg.com/@types/video.js/-/video.js-7.3.14.tgz#ad47f4021afb1d2ea1f32389da06ddb4f4e788f8"
   integrity sha512-8bYfJa1J5+IwAtfB7QiveRrqW7DnZ2yMEDOSkx9MguBP1rluW06S2A13BIrcUKfQSp9iyuGWk8jnsOM+XBfYZg==
 
-"@types/videojs-hotkeys@0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@types/videojs-hotkeys/-/videojs-hotkeys-0.2.0.tgz#c5692f61ee5ed08ba3ae597accad38daa614195b"
-  integrity sha512-FmuIGrx7jAFvqZWdqVkGZu7dpnov75GBy9uYd328PW2dDmTHEPy4Jdc+ZQN5ewU3/VC8PZ2SYWWc6gL2UYvRRg==
+"@types/videojs-hotkeys@0.2.29":
+  version "0.2.29"
+  resolved "https://registry.yarnpkg.com/@types/videojs-hotkeys/-/videojs-hotkeys-0.2.29.tgz#edfecbeb9c3268c41837d8b2da6e0e02a00ebea5"
+  integrity sha512-2ikCBIKpG+PqnCQXBBg8KWRFcKIzQLMVXZm7tc3GQZFk2w6+9EOgICouD+sSvHy7Vwe5Xn/rCjOjtWOOVkigJA==
   dependencies:
-    "@types/video.js" "*"
+    videojs-hotkeys "*"
 
 "@types/webpack@5.28.0":
   version "5.28.0"
@@ -1161,6 +1161,11 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+videojs-hotkeys@*:
+  version "0.2.29"
+  resolved "https://registry.yarnpkg.com/videojs-hotkeys/-/videojs-hotkeys-0.2.29.tgz#b5e88da97aa66c79bd7891db4d3ad1b9918fb0c4"
+  integrity sha512-lABwm9RvaDOBJn/Z1AyV2osxvXfN0sYReolxKSgX1NlmKszHD3N8EfbseL0IebtMLm//Z94R4WERR0U7Szegsw==
 
 watchpack@^2.0.0:
   version "2.1.1"
