@@ -11,7 +11,7 @@
     "@types/node": "16.11.19",
     "@types/video.js": "7.3.14",
     "@types/videojs-hotkeys": "0.2.0",
-    "@types/webpack": "5.28.0",
+    "@types/webpack": "5.28.5",
     "ts-loader": "9.2.6",
     "ts-node": "10.4.0",
     "typescript": "4.5.4",
